@@ -54,14 +54,8 @@ function checkNumber(number){
             } else {
                 counter++
                 listNums.push(Num3)
-                // console.log(counter)
-                // console.log(Num3)
-                // console.log(listNums)
                 const element = document.getElementById(listNums[0]);
-                    if (element) {
-                        // console.log("Element with ID 'myElementId' exists.");
-                    } else {
-                        // console.log("Element with ID 'myElementId' does not exist.");
+                    if (!element) {
                         const li = document.createElement("li")
                         li.textContent = listNums[0]
                         li.id = listNums[0]
@@ -70,7 +64,6 @@ function checkNumber(number){
                         li.dataset.listNums = listNums
                         li.style.order = listNums[0]
                         ul.appendChild(li)
-                        // console.log(li.dataset.counter)
                     }
                 counter = 0
                 listNums = []
@@ -81,14 +74,11 @@ function checkNumber(number){
                 } else if (ul.childElementCount === 100) {
                     const userResponse = confirm('Do you want me to just run all possible combinations so we can get on with our lives?');
                         if (userResponse) {
-                        // console.log("User confirmed: Yes");
                         let count = 1;
                             do {
                                 checkNumber(count)
                                 count++
                             } while (count < 10000);
-                        } else {
-                        // console.log("User cancelled: No");
                         }
                 }
             }
@@ -101,10 +91,7 @@ function checkNumber(number){
         } else {
             const element = document.getElementById(listNums[0]);
                     if (element) {
-                        // console.log("Element with ID 'myElementId' exists.");
                     } else {
-                        // console.log("Element with ID 'myElementId' does not exist.");
-                        // const ul = document.getElementById('results')
                         const li = document.createElement("li")
                         li.textContent = listNums[0]
                         li.id = listNums[0]
@@ -118,6 +105,19 @@ function checkNumber(number){
     }
 
 }
+
+document.addEventListener('mouseover', function(showPopup) {
+    if (showPopup.target.id) {
+        let elementId = showPopup.target.id;
+        let elementClass = showPopup.target.class;
+        let elementCounter = showPopup.target.dataset.counter;
+        let elementListNums = showPopup.target.dataset.listNums;
+        if (elementClass = 'result') {
+            console.log(elementCounter)
+            console.log(elementListNums)
+        }
+    }
+});
 
 
 </script>
