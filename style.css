@@ -4,29 +4,27 @@ h1 {
 }
 
 #results {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     list-style-type: none;
     padding: 20px;
 }
 
-.resultgood {
+li {
     border-radius: 8px;
-    background-color: rgba(0, 194, 0, 0.849);
     text-align: center;
     color: white;
     padding: 15px;
     min-width: 64px;
 }
 
+.resultgood {
+    background-color: rgba(0, 194, 0, 0.849);
+}
+
 .resultbad {
-    border-radius: 8px;
     background-color: rgba(255, 0, 0, 0.849);
-    text-align: center;
-    color: white;
-    padding: 15px;
-    min-width: 64px;
 }
 
 input {

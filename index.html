@@ -106,16 +106,11 @@ function checkNumber(number){
 
 }
 
-document.addEventListener('mouseover', function(showPopup) {
-    if (showPopup.target.id) {
-        let elementId = showPopup.target.id;
-        let elementClass = showPopup.target.class;
-        let elementCounter = showPopup.target.dataset.counter;
-        let elementListNums = showPopup.target.dataset.listNums;
-        if (elementClass = 'result') {
-            console.log(elementCounter)
-            console.log(elementListNums)
-        }
+document.querySelector("ul").addEventListener('click', function(event) {
+    if (event.target.matches("li")) {
+        console.log(event.target.id)
+        console.log(event.target.dataset.counter)
+        console.log(event.target.dataset.listNums)
     }
 });
 
